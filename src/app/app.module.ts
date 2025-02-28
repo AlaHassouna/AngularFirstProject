@@ -26,6 +26,7 @@ import { EventComponent } from './event/event.component';
 import { ArticleComponent } from './article/article.component';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { ModalEvtComponent } from './modal-evt/modal-evt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import {MatSortModule} from '@angular/material/sort';
     DashboardComponent,
     ToolComponent,
     EventComponent,
-    ArticleComponent
+    ArticleComponent,
+    ModalEvtComponent
   ],
   imports: [
     FormsModule,
