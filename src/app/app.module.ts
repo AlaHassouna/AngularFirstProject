@@ -27,6 +27,11 @@ import { ArticleComponent } from './article/article.component';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { ModalEvtComponent } from './modal-evt/modal-evt.component';
+
+
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +62,9 @@ import { ModalEvtComponent } from './modal-evt/modal-evt.component';
     MatListModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Evt } from 'src/Modeles/Evt';
 import { EventService } from 'src/Services/event.service';
 import { ModalEvtComponent } from '../modal-evt/modal-evt.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-event',
@@ -17,7 +17,7 @@ export class EventComponent implements OnInit,AfterViewInit{
     
   }
   dataSource: MatTableDataSource<Evt>= new MatTableDataSource<Evt>(); 
-  displayedColumns: string[] = ['id', 'title', 'dateDebut', 'dateFin', 'lieu'];
+  displayedColumns: string[] = ['id', 'title', 'dateDebut', 'dateFin', 'lieu','action'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -56,9 +56,26 @@ export class EventComponent implements OnInit,AfterViewInit{
             //   })
                
             // });
+            if(result){
             console.log("Dialog result:",result); 
-
+            this.ES.addEvent(result).subscribe(()=>{
+          
+              this.fetchData()
+                 
+              });
+            }
           
         });
+  }
+
+  openedit(id:string){
+    const dialogConfig = new MatDialogConfig();
+    this.ES.getEventById(id).subscribe((evtRecupere)=>{
+      // envoyer evtRecupere vers la boite
+      
+      dialogConfig.data =evtRecupere
+      this.dialog.open(ModalEvtComponent, dialogConfig);
+      console.log("evtRecupere",evtRecupere)
+    })
   }
 }
