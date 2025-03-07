@@ -22,13 +22,14 @@
       <!-- Name Column -->
       <ng-container matColumnDef="dateDebut">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Début </th>
-        <td mat-cell *matCellDef="let row"> {{row.dateDebut}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.dateDebut| date:'medium'}} </td>
       </ng-container>
   
       <!-- Fruit Column -->
       <ng-container matColumnDef="dateFin">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Fin </th>
-        <td mat-cell *matCellDef="let row"> {{row.dateFin}} </td>
+        <!--le pipe date ne change pas le contenu de la variable il change que l'affichage-->
+        <td mat-cell *matCellDef="let row"> {{row.dateFin| date:'medium'}} </td>
       </ng-container>
   <!-- Fruit Column -->
   <ng-container matColumnDef="lieu">
@@ -39,8 +40,7 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
     <td mat-cell *matCellDef="let row">
       <button (click)="openedit(row.id)"><mat-icon>edit</mat-icon></button>
-      <mat-icon>delete</mat-icon>
-
+      <button (click)="openedelete(row.id)"><mat-icon>delete</mat-icon></button>
     </td>
   </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

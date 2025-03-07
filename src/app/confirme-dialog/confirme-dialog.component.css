@@ -1,0 +1,48 @@
+/* Style pour le titre de la boîte de dialogue */
+app-confirme-dialog h2.mat-dialog-title {
+    color: #d32f2f !important;
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* Style pour le contenu de la boîte de dialogue */
+  app-confirme-dialog .mat-dialog-content {
+    color: #616161 !important;
+    font-size: 1em !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Style pour les actions de la boîte de dialogue */
+  app-confirme-dialog .mat-dialog-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    padding: 8px 0 !important;
+  }
+  
+  /* Style pour les boutons */
+  app-confirme-dialog button.mat-button {
+    margin-left: 8px !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    font-size: 0.9em !important;
+    text-transform: uppercase !important;
+  }
+  
+  /* Style spécifique pour le bouton Annuler */
+  app-confirme-dialog button.mat-button[mat-dialog-close] {
+    background-color: #f5f5f5 !important;
+    color: #757575 !important;
+  }
+  
+  /* Style spécifique pour le bouton Supprimer */
+  app-confirme-dialog button.mat-button[mat-dialog-close="true"] {
+    background-color: #d32f2f !important;
+    color: white !important;
+  }
+  
+  /* Effet au survol pour les boutons */
+  app-confirme-dialog button.mat-button:hover {
+    opacity: 0.9 !important;
+    transition: opacity 0.3s ease !important;
+  }

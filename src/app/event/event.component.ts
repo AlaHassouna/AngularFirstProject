@@ -6,6 +6,7 @@ import { Evt } from 'src/Modeles/Evt';
 import { EventService } from 'src/Services/event.service';
 import { ModalEvtComponent } from '../modal-evt/modal-evt.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ConfirmeDialogComponent } from '../confirme-dialog/confirme-dialog.component';
 
 @Component({
   selector: 'app-event',
@@ -74,8 +75,34 @@ export class EventComponent implements OnInit,AfterViewInit{
       // envoyer evtRecupere vers la boite
       
       dialogConfig.data =evtRecupere
-      this.dialog.open(ModalEvtComponent, dialogConfig);
-      console.log("evtRecupere",evtRecupere)
+      let dialogRef=this.dialog.open(ModalEvtComponent, dialogConfig);
+      // console.log("evtRecupere",evtRecupere)
+      dialogRef.afterClosed().subscribe((data)=>{
+        if(data){
+          this.ES.updateEvent(id,data).subscribe(()=>{
+            this.fetchData();
+          })
+        }
+        
+      
+      })
     })
+  }
+  openedelete(id:string){
+    let dialogRef = this.dialog.open(ConfirmeDialogComponent, {
+          height: '200px',
+          width: '300px',
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          if(result){
+            this.ES.deleteEventById(id).subscribe(()=>{
+          
+              this.fetchData()
+
+               
+            });
+          }
+          console.log(`Dialog result: ${result}`); 
+        });
   }
 }
