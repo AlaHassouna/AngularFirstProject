@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table'; // Import MatTableDataSource
 import { Pub } from 'src/Modeles/Pub';
 import { PubService } from 'src/Services/pub.service';
+import { PubDetailsComponent } from '../pub-details/pub-details.component';
 
 @Component({
   selector: 'app-article',
@@ -35,7 +36,13 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     this.fetch();
   }
-
+  openVis(id:number):void{
+   
+        const x = new MatDialogConfig();
+        x.data=id
+        let dialogRef=this.dialog.open(PubDetailsComponent,x)
+        
+  }
   // open():void{
   //     let dialogRef = this.dialog.open(ModalEvtComponent, {
   //           height: '500px',

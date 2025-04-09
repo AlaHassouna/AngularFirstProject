@@ -39,7 +39,7 @@
         <td mat-cell *matCellDef="let row">
           <button ><mat-icon>edit</mat-icon></button>
           <button ><mat-icon>delete</mat-icon></button>
-          <button ><mat-icon>visibility</mat-icon></button>
+          <button (click)="openVis(row.id)"><mat-icon>visibility</mat-icon></button>
           <button ><mat-icon>add_circle</mat-icon></button>
         </td>
     </ng-container>

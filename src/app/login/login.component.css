@@ -1,0 +1,116 @@
+/* Empêcher le fond gris à tout moment */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    background-color: white !important; /* Toujours blanc */
+    -webkit-text-fill-color: black !important; /* Forcer la couleur du texte */
+    box-shadow: 0 0 0px 1000px white inset !important; /* Forcer le fond blanc */
+    transition: background-color 5000s ease-in-out 0s; /* Éviter le changement rapide */
+}
+
+/* Assurer la couleur après la perte de focus */
+input:-webkit-autofill:blur {
+    background-color: white !important;
+    -webkit-text-fill-color: black !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* Appliquer une bordure constante */
+input {
+    color: black !important;
+    background-color: white !important;
+    border: 1px solid #ccc !important;
+}
+
+/* Contexte global */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff, #f8f8f8); /* Dégradé blanc */
+    color: black;
+}
+
+/* Carte de connexion */
+.login-card {
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.17); /* Transparence */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: black;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Titre */
+mat-card-title h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Champs d'entrée */
+.full-width {
+    width: 100%;
+}
+
+mat-form-field {
+    margin-bottom: 15px;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Bouton */
+.login-btn {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: #333; /* Gris foncé */
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Message d'erreur */
+.error-message {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

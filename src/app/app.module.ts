@@ -31,6 +31,15 @@ import { ModalEvtComponent } from './modal-evt/modal-evt.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { PubDetailsComponent } from './pub-details/pub-details.component';
+import { MatCardModule } from '@angular/material/card';
+
+
+import { firebaseConfig } from './environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -43,9 +52,13 @@ import {MatNativeDateModule} from '@angular/material/core';
     ToolComponent,
     EventComponent,
     ArticleComponent,
-    ModalEvtComponent
+    ModalEvtComponent,
+    PubDetailsComponent,
+    LoginComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
@@ -64,7 +77,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatPaginatorModule,
     MatSortModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

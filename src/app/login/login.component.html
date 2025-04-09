@@ -1,0 +1,38 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>
+          <h2><mat-icon>login</mat-icon> Connexion</h2>
+        </mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+          <!-- Email -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="email" placeholder="Entrez votre email" required />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+  
+          <!-- Mot de passe -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Mot de passe</mat-label>
+            <input matInput type="password" [(ngModel)]="password" name="password" placeholder="Entrez votre mot de passe" required />
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+  
+          <!-- Message d'erreur -->
+          <div *ngIf="errorMessage" class="error-message">
+            <mat-icon>error_outline</mat-icon> {{ errorMessage }}
+          </div>
+  
+          <!-- Bouton -->
+          <button mat-raised-button color="accent" type="submit" class="full-width login-btn" [disabled]="!email || !password">
+            Se connecter
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
