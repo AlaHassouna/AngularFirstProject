@@ -1,0 +1,90 @@
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .dashboard-card {
+    border-radius: 16px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+    padding: 16px;
+    text-align: center;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    mat-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .card-icon {
+      color: #3f51b5;
+      font-size: 28px;
+    }
+  
+    mat-card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #444;
+    }
+  
+    .card-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #3f51b5;
+      margin-top: 16px;
+    }
+  }
+  
+  /* 🟦 Déplacé en dehors du bloc .dashboard-card */
+  .charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    
+    max-width: 1200px;
+  }
+  
+  .chart-wrapper {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    flex: 1 1 400px;
+    max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .chart-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .beautiful-chart {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Animation d’apparition */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

@@ -42,13 +42,7 @@
       "type": "student",
       "createdDate": "08/11/2025"
     },
-    {
-      "id": "33221",
-      "cin": "43210987",
-      "name": "Meryem",
-      "type": "admin",
-      "createdDate": "21/04/2025"
-    },
+    
     {
       "id": "22110",
       "cin": "87654322",
@@ -389,125 +383,141 @@
     }
   ],
   "Pub": [
-  {
-    "id": 4,
-    "type": "Séminaire",
-    "titre": "Séminaire sur la cybersécurité",
-    "lien": "https://example.com/seminaire-cybersecurite",
-    "date": "2023-09-20",
-    "Sourcepdf": "https://example.com/seminaire-cybersecurite.pdf"
-  },
-  {
-    "id": 5,
-    "type": "Conférence",
-    "titre": "L'avenir du cloud computing",
-    "lien": "https://example.com/conference-cloud",
-    "date": "2023-10-25",
-    "Sourcepdf": "https://example.com/conference-cloud.pdf"
-  },
-  {
-    "id": 6,
-    "type": "Atelier",
-    "titre": "Atelier de design UX/UI",
-    "lien": "https://example.com/atelier-ux-ui",
-    "date": "2023-11-10",
-    "Sourcepdf": "https://example.com/atelier-ux-ui.pdf"
-  },
-  {
-    "id": 7,
-    "type": "Webinaire",
-    "titre": "Introduction à React Native",
-    "lien": "https://example.com/webinaire-react-native",
-    "date": "2023-11-15",
-    "Sourcepdf": "https://example.com/webinaire-react-native.pdf"
-  },
-  {
-    "id": 8,
-    "type": "Conférence",
-    "titre": "Les tendances du marketing digital",
-    "lien": "https://example.com/conference-marketing",
-    "date": "2023-12-01",
-    "Sourcepdf": "https://example.com/conference-marketing.pdf"
-  },
-  {
-    "id": 9,
-    "type": "Séminaire",
-    "titre": "Séminaire sur la blockchain",
-    "lien": "https://example.com/seminaire-blockchain",
-    "date": "2024-01-10",
-    "Sourcepdf": "https://example.com/seminaire-blockchain.pdf"
-  },
-  {
-    "id": 10,
-    "type": "Atelier",
-    "titre": "Atelier de gestion de projet Agile",
-    "lien": "https://example.com/atelier-agile",
-    "date": "2024-01-20",
-    "Sourcepdf": "https://example.com/atelier-agile.pdf"
-  },
-  {
-    "id": 11,
-    "type": "Webinaire",
-    "titre": "Découverte de Docker et Kubernetes",
-    "lien": "https://example.com/webinaire-docker-kubernetes",
-    "date": "2024-02-05",
-    "Sourcepdf": "https://example.com/webinaire-docker-kubernetes.pdf"
-  },
-  {
-    "id": 12,
-    "type": "Conférence",
-    "titre": "L'intelligence artificielle dans la santé",
-    "lien": "https://example.com/conference-ia-sante",
-    "date": "2024-02-15",
-    "Sourcepdf": "https://example.com/conference-ia-sante.pdf"
-  },
-  {
-    "id": 13,
-    "type": "Séminaire",
-    "titre": "Séminaire sur les réseaux 5G",
-    "lien": "https://example.com/seminaire-5g",
-    "date": "2024-03-01",
-    "Sourcepdf": "https://example.com/seminaire-5g.pdf"
-  },
-  {
-    "id": 14,
-    "type": "Atelier",
-    "titre": "Atelier de développement mobile avec Flutter",
-    "lien": "https://example.com/atelier-flutter",
-    "date": "2024-03-10",
-    "Sourcepdf": "https://example.com/atelier-flutter.pdf"
-  },
-  {
-    "id": 15,
-    "type": "Webinaire",
-    "titre": "Introduction à la data science",
-    "lien": "https://example.com/webinaire-data-science",
-    "date": "2024-03-20",
-    "Sourcepdf": "https://example.com/webinaire-data-science.pdf"
-  },
-  {
-    "id": 16,
-    "type": "Conférence",
-    "titre": "Les enjeux de la transformation numérique",
-    "lien": "https://example.com/conference-transformation-numerique",
-    "date": "2024-04-05",
-    "Sourcepdf": "https://example.com/conference-transformation-numerique.pdf"
-  },
-  {
-    "id": 17,
-    "type": "Séminaire",
-    "titre": "Séminaire sur l'Internet des objets (IoT)",
-    "lien": "https://example.com/seminaire-iot",
-    "date": "2024-04-15",
-    "Sourcepdf": "https://example.com/seminaire-iot.pdf"
-  },
-  {
-    "id": 18,
-    "type": "Atelier",
-    "titre": "Atelier de sécurité informatique",
-    "lien": "https://example.com/atelier-securite",
-    "date": "2024-05-01",
-    "Sourcepdf": "https://example.com/atelier-securite.pdf"
-  }
-]
+    {
+      "id": "4",
+      "type": "Séminaire",
+      "titre": "Séminaire sur la cybersécurité",
+      "lien": "https://example.com/seminaire-cybersecurite",
+      "date": "2023-09-20",
+      "Sourcepdf": "https://example.com/seminaire-cybersecurite.pdf"
+    },
+    {
+      "id": "5",
+      "type": "Conférence",
+      "titre": "L'avenir du cloud computing",
+      "lien": "https://example.com/conference-cloud",
+      "date": "2023-10-25",
+      "Sourcepdf": "https://example.com/conference-cloud.pdf"
+    },
+    {
+      "id": "6",
+      "type": "Atelier",
+      "titre": "Atelier de design UX/UI",
+      "lien": "https://example.com/atelier-ux-ui",
+      "date": "2023-11-10",
+      "Sourcepdf": "https://example.com/atelier-ux-ui.pdf"
+    },
+    {
+      "id": "7",
+      "type": "Webinaire",
+      "titre": "Introduction à React Native",
+      "lien": "https://example.com/webinaire-react-native",
+      "date": "2023-11-15",
+      "Sourcepdf": "https://example.com/webinaire-react-native.pdf"
+    },
+    {
+      "id": "8",
+      "type": "Conférence",
+      "titre": "Les tendances du marketing digital",
+      "lien": "https://example.com/conference-marketing",
+      "date": "2023-12-01",
+      "Sourcepdf": "https://example.com/conference-marketing.pdf"
+    },
+    {
+      "id": "9",
+      "type": "Séminaire",
+      "titre": "Séminaire sur la blockchain",
+      "lien": "https://example.com/seminaire-blockchain",
+      "date": "2024-01-10",
+      "Sourcepdf": "https://example.com/seminaire-blockchain.pdf"
+    },
+    {
+      "id": "10",
+      "type": "Atelier",
+      "titre": "Atelier de gestion de projet Agile",
+      "lien": "https://example.com/atelier-agile",
+      "date": "2024-01-20",
+      "Sourcepdf": "https://example.com/atelier-agile.pdf"
+    },
+    {
+      "id": "11",
+      "type": "Webinaire",
+      "titre": "Découverte de Docker et Kubernetes",
+      "lien": "https://example.com/webinaire-docker-kubernetes",
+      "date": "2024-02-05",
+      "Sourcepdf": "https://example.com/webinaire-docker-kubernetes.pdf"
+    },
+    {
+      "id": "12",
+      "type": "Conférence",
+      "titre": "L'intelligence artificielle dans la santé",
+      "lien": "https://example.com/conference-ia-sante",
+      "date": "2024-02-15",
+      "Sourcepdf": "https://example.com/conference-ia-sante.pdf"
+    },
+    {
+      "id": "13",
+      "type": "Séminaire",
+      "titre": "Séminaire sur les réseaux 5G",
+      "lien": "https://example.com/seminaire-5g",
+      "date": "2024-03-01",
+      "Sourcepdf": "https://example.com/seminaire-5g.pdf"
+    },
+    {
+      "id": "14",
+      "type": "Atelier",
+      "titre": "Atelier de développement mobile avec Flutter",
+      "lien": "https://example.com/atelier-flutter",
+      "date": "2024-03-10",
+      "Sourcepdf": "https://example.com/atelier-flutter.pdf"
+    },
+    {
+      "id": "15",
+      "type": "Webinaire",
+      "titre": "Introduction à la data science",
+      "lien": "https://example.com/webinaire-data-science",
+      "date": "2024-03-20",
+      "Sourcepdf": "https://example.com/webinaire-data-science.pdf"
+    },
+    {
+      "id": "16",
+      "type": "Conférence",
+      "titre": "Les enjeux de la transformation numérique",
+      "lien": "https://example.com/conference-transformation-numerique",
+      "date": "2024-04-05",
+      "Sourcepdf": "https://example.com/conference-transformation-numerique.pdf"
+    },
+    {
+      "id": "17",
+      "type": "Séminaire",
+      "titre": "Séminaire sur l'Internet des objets (IoT)",
+      "lien": "https://example.com/seminaire-iot",
+      "date": "2024-04-15",
+      "Sourcepdf": "https://example.com/seminaire-iot.pdf"
+    },
+    {
+      "id": "18",
+      "type": "Atelier",
+      "titre": "Atelier de sécurité informatique",
+      "lien": "https://example.com/atelier-securite",
+      "date": "2024-05-01",
+      "Sourcepdf": "https://example.com/atelier-securite.pdf"
+    },
+    {
+      "id": "4571",
+      "titre": "titre",
+      "lien": "example.com",
+      "Type": "Conf",
+      "Date": "2025-04-16T23:00:00.000Z",
+      "Sourcepdf": "kzbkjsdf.pdf"
+    },
+    {
+      "id": "031c",
+      "titre": "titre",
+      "lien": "example.com",
+      "Type": "Workshop",
+      "Date": "2025-04-16T23:00:00.000Z",
+      "Sourcepdf": "kzbkjsdf.pdf"
+    }
+  ]
 }

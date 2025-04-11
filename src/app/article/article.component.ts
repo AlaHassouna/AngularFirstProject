@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table'; // Import MatTable
 import { Pub } from 'src/Modeles/Pub';
 import { PubService } from 'src/Services/pub.service';
 import { PubDetailsComponent } from '../pub-details/pub-details.component';
+import { PubModalComponent } from '../pub-modal/pub-modal.component';
 
 @Component({
   selector: 'app-article',
@@ -43,7 +44,16 @@ export class ArticleComponent implements OnInit {
         let dialogRef=this.dialog.open(PubDetailsComponent,x)
         
   }
-  // open():void{
+  open():void{
+    let dialogRef = this.dialog.open(PubModalComponent)
+    dialogRef.afterClosed().subscribe((res)=>{
+      if(res){
+        this.PS.addPub(res).subscribe(()=>{
+          this.fetch()
+        })
+      }
+    })
+  }
   //     let dialogRef = this.dialog.open(ModalEvtComponent, {
   //           height: '500px',
   //           width: '300px',

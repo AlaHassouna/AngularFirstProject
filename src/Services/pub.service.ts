@@ -14,5 +14,8 @@ export class PubService {
         return this.http.get<Pub[]>("http://localhost:3000/Pub")
     
   }
+  addPub(article:Pub): Observable<void> {
+    return this.http.post<void>("http://localhost:3000/Pub", article);
+  }
 
 }

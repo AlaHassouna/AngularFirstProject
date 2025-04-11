@@ -1,1 +1,63 @@
-<p>dashboard works!</p>
+<div class="dashboard-cards">
+  <mat-card class="dashboard-card mat-elevation-z4">
+    <mat-card-header>
+      <mat-icon class="card-icon">group</mat-icon>
+      <mat-card-title>Members</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-value">{{ Nb_Members }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card mat-elevation-z4">
+    <mat-card-header>
+      <mat-icon class="card-icon">event</mat-icon>
+      <mat-card-title>Events</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-value">{{ Nb_Events }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card mat-elevation-z4">
+    <mat-card-header>
+      <mat-icon class="card-icon">article</mat-icon>
+      <mat-card-title>Articles</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-value">{{ Nb_Articles }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card mat-elevation-z4">
+    <mat-card-header>
+      <mat-icon class="card-icon">build</mat-icon>
+      <mat-card-title>Tools</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-value">{{ Nb_Tools }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="charts-container">
+    <div class="chart-wrapper">
+      <canvas baseChart
+              class="beautiful-chart"
+              [type]="'line'"
+              [datasets]="chartData"
+              [labels]="chartLabels"
+              [options]="chartOptions">
+      </canvas>
+    </div>
+  
+    <div class="chart-wrapper">
+      <canvas baseChart
+              class="beautiful-chart"
+              [type]="'pie'"
+              [datasets]="chartDataPie"
+              [labels]="chartLabelsPie"
+              [options]="chartOptions">
+      </canvas>
+    </div>
+  </div>
+  

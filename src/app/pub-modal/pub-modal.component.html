@@ -1,0 +1,65 @@
+<mat-dialog-content [formGroup]="form">
+    <div class="form-container">
+      <!-- Titre Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Titre</mat-label>
+        <input matInput formControlName="titre" required>
+        <mat-icon matSuffix>title</mat-icon>
+        <mat-hint>Entrez le titre</mat-hint>
+      </mat-form-field>
+  
+      <!-- Type Selection -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="Type" required>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-icon matSuffix>category</mat-icon>
+      </mat-form-field>
+  
+      <!-- Lien Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Lien</mat-label>
+        <input matInput placeholder="https://example.com" formControlName="lien">
+        <mat-icon matSuffix>link</mat-icon>
+        <mat-error *ngIf="form.get('lien')?.hasError('pattern')">
+          Veuillez entrer une URL valide
+        </mat-error>
+      </mat-form-field>
+      
+      <!-- Date Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="datePicker" formControlName="Date">
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+        
+      </mat-form-field>
+  
+      <!-- Source PDF Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Source PDF</mat-label>
+        <input matInput formControlName="Sourcepdf">
+        <mat-icon matSuffix>picture_as_pdf</mat-icon>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end" class="dialog-actions">
+    <button mat-button mat-dialog-close class="cancel-button">
+      <mat-icon>close</mat-icon> Annuler
+    </button>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid" class="save-button">
+      <mat-icon>save</mat-icon> Enregistrer
+    </button>
+  </mat-dialog-actions>
+
+  <!-- <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>-->

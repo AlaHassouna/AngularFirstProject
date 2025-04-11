@@ -39,8 +39,11 @@ import { firebaseConfig } from './environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { LoginComponent } from './login/login.component';
+import { PubModalComponent } from './pub-modal/pub-modal.component';
 
 
+import {MatSelectModule} from '@angular/material/select';
+import {NgChartsModule} from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +57,8 @@ import { LoginComponent } from './login/login.component';
     ArticleComponent,
     ModalEvtComponent,
     PubDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    PubModalComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -78,7 +82,9 @@ import { LoginComponent } from './login/login.component';
     MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

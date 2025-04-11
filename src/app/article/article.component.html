@@ -2,7 +2,7 @@
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
   </mat-form-field>
-  <button >Create New</button>
+  <button (click)="open()">Create New</button>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
