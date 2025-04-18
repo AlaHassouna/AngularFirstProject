@@ -416,22 +416,6 @@
       "lien": "https://example.com/atelier-securite",
       "date": "2024-05-01",
       "Sourcepdf": "https://example.com/atelier-securite.pdf"
-    },
-    {
-      "id": "4571",
-      "titre": "titre",
-      "lien": "example.com",
-      "Type": "Conf",
-      "Date": "2025-04-16T23:00:00.000Z",
-      "Sourcepdf": "kzbkjsdf.pdf"
-    },
-    {
-      "id": "031c",
-      "titre": "titre",
-      "lien": "example.com",
-      "Type": "Workshop",
-      "Date": "2025-04-16T23:00:00.000Z",
-      "Sourcepdf": "kzbkjsdf.pdf"
     }
   ]
 }

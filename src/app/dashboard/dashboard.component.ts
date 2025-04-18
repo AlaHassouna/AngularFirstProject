@@ -22,7 +22,11 @@ export class DashboardComponent {
   nbTunis:number=0;
   tab_m:string[]=[];
   nbEvtBYM:number[]=[];
-  
+  tab:string[]=[];
+  tab2:string[]=[];
+  nbType:number[]=[];
+
+
   chartData: ChartDataset[] = [
     {
       // ⤵️ Add these
@@ -45,7 +49,9 @@ export class DashboardComponent {
 
   chartDataLine: ChartDataset[] =[];;
   chartLabelsLine: string[] = [];
-  chartOptionsLine: ChartOptions = {};
+
+  chartDataBar: ChartDataset[] =[];;
+  chartLabelsBar: string[] = [];
   constructor(private Ms:MemberService,private Es:EventService,private Ps:PubService){
     this.Ms.GetAllMembers().subscribe((rep)=>{
 
@@ -78,6 +84,26 @@ export class DashboardComponent {
     })
     this.Ps.getAllArticles().subscribe((rep)=>{
       this.Nb_Articles=rep.length;
+      // for(let i=0;i<this.Nb_Articles;i++){
+      //   this.tab.push(rep[i].type);
+      // }
+      // console.log(this.tab);
+      // this.tab2=[...new Set(this.tab)]
+      this.tab2=[...new Set(rep.map(m=>m.type))]
+      console.log(this.tab2);
+
+      for(const lieu of this.tab2){
+        const count=rep.filter(m=>m.type===lieu);
+        this.nbType.push(count.length);
+        
+      }
+      this.chartLabelsBar=this.tab2;
+      this.chartDataBar=[
+        {
+          // ⤵️ Add these
+          label:"Nb Type",
+          data: this.nbType
+        }]
     })
 
 
