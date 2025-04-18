@@ -17,7 +17,11 @@ export class DashboardComponent {
   Nb_Tools:number=0;
   Nb_Teacher:number=0;
   Nb_Student:number=0;
-
+  nbSousse:number=0;
+  nbSfax:number=0;
+  nbTunis:number=0;
+  tab_m:string[]=[];
+  nbEvtBYM:number[]=[];
   
   chartData: ChartDataset[] = [
     {
@@ -34,12 +38,22 @@ export class DashboardComponent {
   chartLabelsPie: string[] = ["Teacher","Student"];
   chartOptionsPie: ChartOptions = {};
 
+  chartDatad: ChartDataset[] =[];
+  chartLabelsd: string[] = ['Sousse','Sfax','Tunis'];
+  chartOptionsd: ChartOptions = {};
 
 
-  constructor(private Ms:MemberService,private Ev:EventService,private Ps:PubService){
+  chartDataLine: ChartDataset[] =[];;
+  chartLabelsLine: string[] = [];
+  chartOptionsLine: ChartOptions = {};
+  constructor(private Ms:MemberService,private Es:EventService,private Ps:PubService){
     this.Ms.GetAllMembers().subscribe((rep)=>{
+
       this.Nb_Members=rep.length;
       for(let i=0;i<this.Nb_Members;i++){
+        this.tab_m.push(rep[i].name);
+        this.nbEvtBYM.push(rep[i].tab_evt.length);
+
         if(rep[i].type=="teacher"){
           this.Nb_Teacher++;
         }else{
@@ -52,13 +66,38 @@ export class DashboardComponent {
         // ⤵️ Add these
         data: [ this.Nb_Teacher, this.Nb_Student]
       }]
+      this.chartLabelsLine=this.tab_m;
+      console.log("this.nbEvtBYM",this.nbEvtBYM);
+      this.chartDataLine=[{
+        label:"EbEventBy Member",
+        data:this.nbEvtBYM
+      }];
     })
-    this.Ev.GetAllEvent().subscribe((rep)=>{
+    this.Es.GetAllEvent().subscribe((rep:any)=>{
       this.Nb_Events=rep.length;
     })
     this.Ps.getAllArticles().subscribe((rep)=>{
       this.Nb_Articles=rep.length;
     })
+
+
+    this.Es.GetAllEvent().subscribe((res:any)=>{
+      this.Nb_Events=res.length
+      for(let i=0;i<this.Nb_Events;i++){
+        if(res[i].lieu=="Sfax") this.nbSfax++;
+        else if(res[i].lieu=="Tunis") this.nbTunis++;
+        else this.nbSousse++;
+      }
+      this.chartDatad=[
+        {
+          // ⤵️ Add these
+          data: [ this.nbSousse, this.nbSfax, this.nbTunis]
+        }]
+    })
+
+   
     
-  }
-}
+  
+  
+
+}}
